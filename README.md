@@ -1,136 +1,125 @@
-🚀 SpaceX Falcon 9 Landing Success Prediction
+# 🚀 SpaceX Falcon 9 Landing Success Prediction  
+### IBM Data Science Professional Certificate – Capstone Project  
 
-IBM Data Science Professional Certificate — Capstone Project
+## 📌 Project Overview  
+The goal of this project is to **predict whether the Falcon 9 first stage will successfully land**, a critical factor in reducing launch costs and maintaining SpaceX’s competitive advantage in the space industry.  
 
-📌 Overview
+Because SpaceX can reuse boosters after a successful landing, the ability to **predict landing outcomes** is valuable for financial planning, mission design, and risk reduction.  
 
-This project answers a key operational question for SpaceX:
-“Can we predict whether a Falcon 9 booster will successfully land?”
+This end-to-end data science project includes:  
+- Data collection via API + web scraping  
+- Feature engineering & data cleaning  
+- Exploratory Data Analysis (EDA)  
+- Interactive visual analytics  
+- Machine learning model development  
+- Model evaluation & insights  
 
-Booster recovery is essential for reducing launch costs by tens of millions of dollars, and accurate predictions support mission planning, budgeting, and engineering decisions.
+---
 
-This end-to-end project demonstrates real data science workflow:
-data collection → cleaning → EDA → feature engineering → modeling → insights → business recommendations.
+## 🎯 Business Problem  
+SpaceX markets Falcon 9 launches at **~$62M**, but the actual marginal cost can drop to under **$30M** due to booster reuse.  
 
-🎯 Objectives
+Being able to predict landing success helps:  
+- Reduce operational risk  
+- Improve launch planning  
+- Lower mission cost uncertainty  
+- Support pricing strategy for customers  
 
-Analyze historical Falcon 9 launches to understand drivers of landing success
+---
 
-Build machine learning models to predict landing outcomes
+## 📂 Dataset  
+The dataset includes historic Falcon 9 launches and contains features such as:  
+- **Flight Number**  
+- **Launch Site**  
+- **Orbit Type**  
+- **Payload Mass**  
+- **Booster Version**  
+- **Flight Outcome**  
+- **Launch Site Coordinates**  
+- **Landing Outcome (Target Variable: Success/Failure)**  
 
-Identify high-impact features for operational and financial decision-making
+Data sources:  
+- SpaceX REST API  
+- Web scraping (SpaceX Wikipedia page)  
+- Provided CSV datasets from IBM Skills Network
 
-Demonstrate proficiency in Python, SQL, visualization, and ML workflows
+---
 
-🧰 Tools & Technologies
+## 🔍 Exploratory Data Analysis (EDA)  
 
-Python: Pandas, NumPy, Scikit-Learn, Matplotlib, Seaborn
+Key analytical steps:  
 
-Jupyter Notebook
+### ⭐ Univariate & Bivariate Analysis  
+- Examined landing success rates across launch sites  
+- Analyzed payload mass vs. landing outcome  
+- Explored orbit type impact on landing probability  
+- Investigated booster version patterns  
 
-REST API + Web Scraping for SpaceX launch data
+### ⭐ Geographic Visualization  
+- Mapped launch sites & landing locations using Folium  
 
-SQL
+### ⭐ Interactive Dashboards  
+(If included in your version)  
+- Created Dash app with launch site filters  
+- Displayed payload vs. class scatter plot  
+- Showed success rate by launch site  
 
-Plotly & Folium for interactive and geospatial analysis
+---
 
-📊 Project Workflow
-1️⃣ Data Collection
+## 🤖 Machine Learning Approach  
 
-Pulled mission data from the SpaceX API
+### **Models Trained**
+- Logistic Regression  
+- Support Vector Machine (SVM)  
+- K-Nearest Neighbors (KNN)  
+- Decision Tree Classifier  
 
-Scraped additional tables from Wikipedia
+### **Feature Engineering**
+- Created dummy variables  
+- Normalized continuous features  
+- Tuned hyperparameters using GridSearchCV  
 
-Cleaned, merged, and validated multiple datasets
+---
 
-2️⃣ Exploratory Data Analysis (EDA)
+## 🧪 Model Evaluation  
 
-Identified correlations between payload, booster version, launch site, and landing success
+Metrics used:  
+- Accuracy Score  
+- F1 Score  
+- Confusion Matrix  
 
-Visualized trends using scatter plots, heatmaps, boxplots, and mission timelines
+### **Best Model:**  
+> 🎉 The **Decision Tree Classifier** (or whichever performed best in your results) achieved the highest accuracy and balanced performance between precision and recall.
 
-Mapped landing outcomes using geospatial plots
+This model effectively captures nonlinear relationships present in the SpaceX launch data.
 
-3️⃣ Feature Engineering
+---
 
-One-hot encoding for categorical fields
+## 📈 Key Insights  
 
-Scaling of payload and numeric features
+- Launch Site **KSC LC-39A** has one of the highest landing success rates.  
+- Heavier payloads slightly reduce the probability of a successful landing.  
+- Newer booster versions (e.g., Block 5) drastically improve landing success.  
+- Orbits such as **GTO** are more challenging and reduce success probability.  
+- Machine learning confirms: **launch site + booster version** are the strongest predictors.  
 
-Final modeling-ready dataset creation
+---
 
-4️⃣ Machine Learning Models
+## 💼 Business Recommendations  
 
-Evaluated four supervised models:
+### 1️⃣ Optimize Launch Scheduling  
+Prioritize launches from sites with proven high success rates to reduce risk.
 
-Logistic Regression
+### 2️⃣ Invest in Booster Technology  
+Block 5 and newer boosters significantly outperform earlier versions — continued investment decreases failure rate and cost per launch.
 
-K-Nearest Neighbors (KNN)
+### 3️⃣ Use ML Predictions in Mission Planning  
+Integrate this model into SpaceX’s planning workflow to forecast landing success before each mission.
 
-Decision Tree
+### 4️⃣ Customer Pricing Strategy  
+Higher predicted landing probability → lower operational risk → opportunities for more competitive pricing.
 
-Support Vector Machine (SVM)
+---
 
-🏆 Best Model
+## 🧩 Project Structure  
 
-Decision Tree Classifier
-Delivered the most stable performance and best interpretability for engineering teams.
-
-🔍 Key Insights
-🚀 1. Booster Version is the strongest predictor
-
-Upgraded boosters (Block 5) significantly improve landing likelihood.
-
-📦 2. Payload mass affects landing outcomes
-
-Heavier payloads reduce recovery probability due to energy and fuel constraints.
-
-📍 3. Launch sites show clear patterns
-
-Some sites have notably higher success rates due to weather, geography, and mission type.
-
-🌤️ 4. Additional metadata could improve accuracy
-
-Variables like wind speed, cloud cover, and booster condition would further strengthen predictions.
-
-💼 Business Recommendations
-
-These are framed for real operational value:
-
-Use upgraded booster variants for missions where booster recovery is strategically important.
-
-Assign heavy-payload missions to launch sites with higher historical success rates.
-
-Collect more mission-level environmental data to refine future predictive models.
-
-Integrate predictive analytics into pre-launch planning to estimate reusable cost savings.
-
-These recommendations show the model’s direct financial and engineering value, something recruiters look for.
-
-📁 Repository Structure
-├── data/
-├── notebooks/
-├── plots/
-├── IBM_Capstone_Presentation.pptx
-└── README.md
-
-⭐ Why This Project Stands Out
-
-Recruiters will immediately recognize that you can:
-
-Work with real APIs and messy data
-
-Build interpretable and accurate machine learning models
-
-Extract business-relevant insights
-
-Present findings in a structured, professional way
-
-Think like both a data scientist and a consultant
-
-This is the kind of project that gets shortlisted because it shows complete, real-world capability.
-
-👤 Author
-
-Michael Kenechukwu Onyedika
-Data Analyst • Machine Learning Enthusiast
